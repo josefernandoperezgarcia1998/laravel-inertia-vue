@@ -24,14 +24,14 @@
                                             {{note.excerpt}}
                                         </td>
                                         <td class="px-4 pý-2">
-                                            <Inertia-link :href="route('notes.show', note.id)">
+                                            <inertia-link :href="route('notes.show', note.id)">
                                                 Ver
-                                            </Inertia-link>
+                                            </inertia-link>
                                         </td>
                                         <td class="px-4 pý-2">
-                                            <Inertia-link :href="route('notes.edit', note.id)">
+                                            <inertia-link :href="route('notes.edit', note.id)">
                                                 Editar
-                                            </Inertia-link>
+                                            </inertia-link>
                                         </td>
                                     </tr>
                                 </table>
