@@ -52,7 +52,8 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        //
+        //Se retorna a la vista show por "id" o sea por la nota que se estará dando clic para mostrar...
+        return Inertia::render('Notes/Show', compact('note'));
     }
 
     /**
