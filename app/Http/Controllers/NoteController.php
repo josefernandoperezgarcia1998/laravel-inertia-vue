@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -14,7 +15,12 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        //La función index va a retornar una vista que se encuentra en
+        //Resources/js/Pages/Notes/Index | Que a su vez me va a devolver 
+        //Una consulta de las últimas notas con ELOQUENT
+        return Inertia::render('Notes/Index',[
+            'notes' => Note::latest()->get()
+        ]);
     }
 
     /**
