@@ -16,6 +16,27 @@
                                 <p class="text-sm text-gray-600">Toma el registro correcto y ejecuta cualquier función de un CRUD</p>
                             </div>
                         </div>
+                        <div class="md:col-span-2 mt-5 md:mt-0">
+                            <div class="shadow bg-white md:rounded-md p-4">
+                                <table>
+                                    <tr v-for="note in notes">
+                                        <td class="border px-4 pý-2">
+                                            {{note.excerpt}}
+                                        </td>
+                                        <td class="px-4 pý-2">
+                                            <Inertia-link :href="route('notes.show', note.id)">
+                                                Ver
+                                            </Inertia-link>
+                                        </td>
+                                        <td class="px-4 pý-2">
+                                            <Inertia-link :href="route('notes.edit', note.id)">
+                                                Editar
+                                            </Inertia-link>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -30,5 +51,10 @@
         components: {
             AppLayout,
         },
+        /* props va a contener las propiedades de la vista, en este caso es donde se junta con el back
+        y pide las notas que se pasaron en el controlador que es un arreglo */
+        props: {
+            notes: Array,
+        }
     }
 </script>s
