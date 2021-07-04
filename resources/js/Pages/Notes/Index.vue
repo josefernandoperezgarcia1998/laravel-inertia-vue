@@ -25,12 +25,12 @@
                                         </td>
                                         <td class="px-4 pý-2">
                                             <inertia-link :href="route('notes.show', note.id)">
-                                                Ver
+                                                <button class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Ver</button>
                                             </inertia-link>
                                         </td>
                                         <td class="px-4 pý-2">
                                             <inertia-link :href="route('notes.edit', note.id)">
-                                                Editar
+                                                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Editar</button>
                                             </inertia-link>
                                         </td>
                                     </tr>
