@@ -22,7 +22,7 @@
                                 
                                 <hr class="my-6">
                                 <inertia-link :href="route('notes.index')">
-                                    Volver
+                                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">Volver</button>
                                 </inertia-link>
                             </div>
                         </div>
