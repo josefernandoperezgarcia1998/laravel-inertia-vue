@@ -18,7 +18,7 @@
                         </div>
                         <div class="md:col-span-2 mt-5 md:mt-0">
                             <div class="shadow bg-white md:rounded-md p-4">
-                                <form>
+                                <form @submit.prevent="submit">
                                     <label class="block font-medium text-sm text-gray-700" for="">Resumen</label>
                                     <textarea class="form-input w-full rounded-md shadow-sm" v-model="form.excerpt"></textarea>
                                     <label class="block font-medium text-sm text-gray-700" for="">Contenido</label>
@@ -48,12 +48,20 @@
         /* Esta es la data (información) que se va a manejar en el formulario de la vista Edit */
         data () {
             return {
+                /* Variable llamada formulario qeu contiene el extracto y el contenido de la nota */
                 form: {
                     /* Se toma el extracto de la nota */
                     excerpt: this.note.excerpt,
                     /* se toma el contenido de la nota */
                     content: this.note.content,
                 }
+            }
+        },
+        /* Aquí iran los métodos que se vaya a utilizar en el script */
+        methods: {
+            /* Método submit está en el formulario y estae bloque de código se va a ejecutar cuando se ejecute el formulario */
+            submit() {
+                this.$inertia.put(this.route('notes.update', this.note.id), this.form)
             }
         }
     }
