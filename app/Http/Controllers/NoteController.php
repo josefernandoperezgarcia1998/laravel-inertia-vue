@@ -41,7 +41,17 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /* Se creará una nueva nota y cuando se creé se redirigirá 
+        hacia la misma nota pero en la vista edit por id */
+
+        $request->validate([
+            'excerpt' => 'required',
+            'content' => 'required',
+        ]);
+
+        $note = Note::create($request->all());
+
+        return redirect()->route('notes.edit', $note->id);
     }
 
     /**
