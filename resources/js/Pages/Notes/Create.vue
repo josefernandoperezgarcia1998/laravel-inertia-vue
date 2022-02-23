@@ -57,7 +57,7 @@
         methods: {
             /* Método submit está en el formulario y estae bloque de código se va a ejecutar cuando se ejecute el formulario */
             submit() {
-                this.$inertia.put(this.route('notes.update', this.note.id), this.form)
+                this.$inertia.post(this.route('notes.store'), this.form)
             }
         }
     }
