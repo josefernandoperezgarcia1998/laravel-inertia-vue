@@ -25,6 +25,11 @@
                                     <textarea class="form-input w-full rounded-md shadow-sm" rows="8" v-model="form.content"></textarea>
                                     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4">Editar</button>
                                 </form>
+                                <hr class="my-6">
+
+                                <a href="#" @click.prevent="destroy" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4">
+                                    Eliminar nota
+                                    </a>
                             </div>
                         </div>
                     </div>
@@ -62,6 +67,11 @@
             /* Método submit está en el formulario y estae bloque de código se va a ejecutar cuando se ejecute el formulario */
             submit() {
                 this.$inertia.put(this.route('notes.update', this.note.id), this.form)
+            },
+            destroy(){
+                if(confirm('¿Desea eliminar la nota?')){
+                    this.$inertia.delete(this.route('notes.destroy', this.note.id))
+                }
             }
         }
     }
